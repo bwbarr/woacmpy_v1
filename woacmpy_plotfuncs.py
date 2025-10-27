@@ -143,8 +143,7 @@ def make_figure(fi,steplist,details):
     elif fi.type == 'AllStepsDiffTimes':
         figname=fi.figtag+'_'+datetag+strmtimes_filename+'.png'
     # ----------------- Hack Functions -----------------------
-    #addBC24Hacks(fi,steplist)
-    addBEA25Hacks(fi)
+    addBEA26Hacks(fi)
     # --------------------------------------------------------
     plt.savefig(figname,dpi=wg.global_dpi)
     print('Saving '+figname+'\n')
@@ -221,12 +220,12 @@ def make_frame(fi,fr,steplist):
             if fr.typeparams['layout'][0] == 'lnd_stock':    # Stock land image
                 fr.axobj.stock_img()
             if fr.typeparams['layout'][0] == 'lnd_grey':    # Grey land
-                fr.axobj.add_feature(cfeature.NaturalEarthFeature('physical','land', '50m',facecolor='grey'),zorder=2)
+                fr.axobj.add_feature(cfeature.NaturalEarthFeature('physical','land', '50m',facecolor='#C0C0C0'),zorder=2)
             if fr.typeparams['layout'][1] == 'ocn_grey':    # Grey ocean
                 fr.axobj.add_feature(cfeature.NaturalEarthFeature('physical','ocean','50m',facecolor='grey'),zorder=-1)
         gl = fr.axobj.gridlines(crs=ccrs.PlateCarree(),draw_labels=True,zorder=3)
-        gl.xlabels_top = False
-        gl.ylabels_right = False
+        gl.top_labels = False
+        gl.right_labels = False
         gl.xformatter = LONGITUDE_FORMATTER
         gl.yformatter = LATITUDE_FORMATTER
         gl.xlabel_style = {'size':fr.fontsize}

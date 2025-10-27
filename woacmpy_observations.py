@@ -59,12 +59,12 @@ class StormObs:
 def get_BT(strm):
 
     # Import data, clip before and after simulation time, and extract 6hrly subset
-    BT_filename = '/home/orca/bwbarr/observations/NHC_besttrack/besttrack_'+strm.strmname+'.txt'
+    BT_filename = '/home/orca3/bwbarr/python/active_github_versions/woacmpy_v1/observations/NHC_besttrack/besttrack_'+strm.strmname+'.txt'
     BT_file = open(BT_filename,'r')
     BT_format = None
-    if strm.strmname in ['Harvey','Florence','Michael','Irene']:    # NHC format
+    if strm.strmname in ['Harvey','Florence','Michael','Dorian','Irene']:    # NHC format
         BT_format = 'NHC'
-    elif strm.strmname in ['Fanapi','Dorian']:    # JTWC format
+    elif strm.strmname in ['Fanapi']:    # JTWC format
         BT_format = 'JTWC'
     if strm.strmname in ['Harvey','Florence','Michael','Dorian','Irene']:    # Longitude given as West
         EastWestCorrection = -1.0

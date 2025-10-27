@@ -278,7 +278,7 @@ def add_field(r,fld,dom,fldtype):
     if r.field_impswitches[fld,dom] == 0:
         r.myfields[fld][dom] = wc.Field()
         if fldtype == 'Nat':
-            if (wg.field_info[fld][2] in ['WRF']  and dom in [1,2,3]) or \
+            if (wg.field_info[fld][2] in ['WRF','WRTIN'] and dom in [1,2,3]) or \
                (wg.field_info[fld][2] in ['UMWM'] and dom in [4,5,6]) or \
                (wg.field_info[fld][2] in ['HYC']  and dom in [7,8,9]):    # Native field requested on its own model component's grid
                 r.field_impswitches[fld,dom] = 1
@@ -344,6 +344,8 @@ def import_fields():
                                 if j in [1,2,3]:    # ATM domains
                                     if wg.field_info[i][2] == 'SPRWRT':
                                         ncfile = r.sprwrt_path+'/sprayHFs_d02_'+currentTime.isoformat().replace('T','_')+'.nc'
+                                    elif wg.field_info[i][2] == 'WRTIN':
+                                        ncfile = wg.write_dir+'/writeflds_'+r.strmtag+'_'+currentTime.isoformat().replace('T','_')+'.nc'
                                     else:
                                         ncfile = r.run_path+'/wrfout_d0'+str(j)+'_'+currentTime.isoformat().replace('T','_')
                                 elif j in [4]:    # WAV domain, only single UMWM domain used right now
@@ -404,16 +406,28 @@ def import_fields():
                                            indx('OM_Q2'),indx('OM_Q2L'),indx('OM_L'),indx('OM_KM'),indx('OM_KH'),\
                                            indx('OM_KQ'),indx('OM_KMB'),indx('OM_KHB')]: # WRF 3D ocean model fields
                                     r.myfields[i][j].grdata.append(nc.variables[wg.field_info[i][3]][0,:,:,:])
-                                else:    # For all other variables, import normally
+                                elif i in [117,147]:    # Spray droplet spectra fields -- only occurs with WRTIN
+                                    r.myfields[i][j].grdata.append(nc.variables[wg.field_info[i][3]][0,:,:,:])
+                                else:    # For all other variables, import normally as 2D fields
                                     r.myfields[i][j].grdata.append(nc.variables[wg.field_info[i][3]][0,:,:])
             if r.timedel[0] == 'hours':
                 currentTime += timedelta(hours=r.timedel[1])
             elif r.timedel[0] == 'minutes':
                 currentTime += timedelta(minutes=r.timedel[1])
             if currentTime > r.endTime:break
-    # Convert to numpy arrays
-    for f in wc.Field.AllNativeFields:
-        f.grdata = np.array(f.grdata)
+        # Convert to numpy arrays
+        for j in [1,2,3,4,5,6,7,8,9]:
+            if wg.active_doms[j]:
+                if 1 in r.field_impswitches[:,j]:
+                    for i in range(1,len(r.myfields)):
+                        if r.field_impswitches[i,j] == 1:
+                            if i in [117,147]:    # These WRTIN spray droplet spectra should remain a list in the time dimension
+                                pass
+                            else:
+                                r.myfields[i][j].grdata = np.array(r.myfields[i][j].grdata)
+    ## Convert to numpy arrays
+    #for f in wc.Field.AllNativeFields:
+    #    f.grdata = np.array(f.grdata)
 
     # 2. Remap fields if needed, only works for 2D fields ===========================================
     for r in wc.Run.AllRuns:    # Loop over runs

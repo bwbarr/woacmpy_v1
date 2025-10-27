@@ -859,3 +859,6 @@ lat_MaxField = None    # Latitude grid
 # DPI for saved images
 global_dpi = 100
 
+# List of indices of fields to write to netcdf
+write_fld_indx = []
+write_dir = None
