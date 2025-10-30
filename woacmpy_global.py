@@ -816,6 +816,7 @@ remap_from_ATM = None
 remap_from_WAV = None
 remap_from_OCN = None
 global_UMWM = False    # UMWM solo run on global grid
+wrfout_NUWRF = False    # NU-WRF wrfout file names have different format; change to True if using NU-WRF
 inps_spr4_uwincm  = [40,54,46,49,72,27,24,22,23,21,15]    # Input fields if using spraylibs_v4 with UWIN-CM output and grids
 inps_spr4_umwmglb = [94,95,96,97,98,27,24,22,23,21,99]    # Input fields if using spraylibs_v4 with global UMWM output and grid
 inps_csp1_uwincm  = [40,54,47,49,72,27,24,22,23,21,15]    # Input fields if using coare_spray_v1 with UWIN-CM output and grids

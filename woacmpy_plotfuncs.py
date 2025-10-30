@@ -123,7 +123,7 @@ def make_figure(fi,steplist,details):
     for fr in fi.myframes:
         if fr.type in ['Map']:
             uses_cartopy = True
-    if uses_cartopy == False:
+    if True:#uses_cartopy == False:
         plt.tight_layout()
     plt.subplots_adjust(left=fi.subadj[0],bottom=fi.subadj[1],right=fi.subadj[2],top=fi.subadj[3])
     for mark in fi.marks:
@@ -143,7 +143,7 @@ def make_figure(fi,steplist,details):
     elif fi.type == 'AllStepsDiffTimes':
         figname=fi.figtag+'_'+datetag+strmtimes_filename+'.png'
     # ----------------- Hack Functions -----------------------
-    addBEA26Hacks(fi)
+    #addBEA26Hacks(fi)
     # --------------------------------------------------------
     plt.savefig(figname,dpi=wg.global_dpi)
     print('Saving '+figname+'\n')

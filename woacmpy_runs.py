@@ -48,71 +48,6 @@ def use_run(name,startTime,endTime,timedel):
             w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray/w2c'
             w2c_filename = 'florence_1.log.csv'
             run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_MsprX2':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_MsprX2'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_MsprX2/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_MsprX4':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_MsprX4'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_MsprX4/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale05v10':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale05v10'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale05v10/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale10v05':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v05'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v05/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale01v10_MsprX2':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale01v10_MsprX2'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale01v10_MsprX2/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale01v10':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale01v10'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale01v10/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale10v01':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v01'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v01/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_Scale10v01_MsprX05':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v01_MsprX05'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_Scale10v01_MsprX05/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_ENS222':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS222'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS222/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_ENS221':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS221'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS221/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_ENS220':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS220'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS220/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_ENS219':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS219'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS219/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Florence_230116_full_wispray_ENS218':
-            run_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS218'
-            w2c_path = '/home/orca3/bwbarr/runs/florence/run_230116_full_wispray_ENS218/w2c'
-            w2c_filename = 'florence_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
         run.strmname = 'Florence'
         run.strmtag = 'flo'
 
@@ -120,12 +55,7 @@ def use_run(name,startTime,endTime,timedel):
         pass
 
     elif name[:6] == 'Dorian':
-        if name == 'Dorian_211118_AWO1.3_wider_d02_relo2_WRFreinit19083012_retry19090200':
-            run_path = '/home/orca3/bwbarr/runs/dorian/run_211118_AWO1.3_wider_d02_relo2_WRFreinit19083012_retry19090200'
-            w2c_path = '/home/orca3/bwbarr/runs/dorian/run_211118_AWO1.3_wider_d02_relo2_WRFreinit19083012_retry19090200/w2c_new'
-            w2c_filename = 'dorian_1.log.csv'
-            run = wc.Run(run_path,w2c_path,w2c_filename)
-        elif name == 'Dorian_230116_WRFreinit19083012_full_nospray':
+        if name == 'Dorian_230116_WRFreinit19083012_full_nospray':
             run_path = '/home/orca3/bwbarr/runs/dorian/run_230116_WRFreinit19083012_full_nospray'
             w2c_path = '/home/orca3/bwbarr/runs/dorian/run_230116_WRFreinit19083012_full_nospray/w2c'
             w2c_filename = 'dorian_1.log.csv'
@@ -194,6 +124,20 @@ def use_run(name,startTime,endTime,timedel):
             run = wc.Run(run_path,w2c_path,w2c_filename)
         run.strmname = 'Nor18Jan'
         run.strmtag = 'n18jan'
+
+    elif name[:5] == 'Henri':
+        if name == 'Henri_251027_isftcflx50000':
+            run_path = '/srv/data2/bwbarr/runs_Discover/henri/run_251027_isftcflx50000'
+            w2c_path = None
+            w2c_filename = None
+            run = wc.Run(run_path,w2c_path,w2c_filename)
+        elif name == 'Henri_251027_isftcflx50001':
+            run_path = '/srv/data2/bwbarr/runs_Discover/henri/run_251027_isftcflx50001'
+            w2c_path = None
+            w2c_filename = None
+            run = wc.Run(run_path,w2c_path,w2c_filename)
+        run.strmname = 'Henri'
+        run.strmtag = 'hen'
 
     # Define time-stepping information and track
     run.startTime = startTime

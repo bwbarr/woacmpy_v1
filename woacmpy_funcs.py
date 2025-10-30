@@ -346,6 +346,8 @@ def import_fields():
                                         ncfile = r.sprwrt_path+'/sprayHFs_d02_'+currentTime.isoformat().replace('T','_')+'.nc'
                                     elif wg.field_info[i][2] == 'WRTIN':
                                         ncfile = wg.write_dir+'/writeflds_'+r.strmtag+'_'+currentTime.isoformat().replace('T','_')+'.nc'
+                                    elif wg.wrfout_NUWRF:
+                                        ncfile = r.run_path+'/wrfout_d0'+str(j)+'_'+currentTime.strftime('%Y-%m-%d_%H_%M_%S')
                                     else:
                                         ncfile = r.run_path+'/wrfout_d0'+str(j)+'_'+currentTime.isoformat().replace('T','_')
                                 elif j in [4]:    # WAV domain, only single UMWM domain used right now
