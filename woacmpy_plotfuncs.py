@@ -22,7 +22,7 @@ from netCDF4 import Dataset
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 from matplotlib.gridspec import GridSpec
 from scipy.interpolate import griddata,interp1d
-if os.path.islink('/home/orca/bwbarr/python/woacmpy_v1/woacmpy_HACKS.py'):
+if os.path.islink('/home/orca3/bwbarr/python/active_github_versions/woacmpy_v1/woacmpy_HACKS.py'):
     from woacmpy_v1.woacmpy_HACKS import *
 
 
@@ -143,7 +143,7 @@ def make_figure(fi,steplist,details):
     elif fi.type == 'AllStepsDiffTimes':
         figname=fi.figtag+'_'+datetag+strmtimes_filename+'.png'
     # ----------------- Hack Functions -----------------------
-    #addBEA26Hacks(fi)
+    addBEA26Hacks(fi)
     # --------------------------------------------------------
     plt.savefig(figname,dpi=wg.global_dpi)
     print('Saving '+figname+'\n')

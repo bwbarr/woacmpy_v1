@@ -1,5 +1,6 @@
 import numpy as np
 import woacmpy_v1.woacmpy_global as wg
+import coare_spray_v1.ssgf as csp
 
 
 # ====================== Class definitions for WOACMPY ======================
@@ -176,8 +177,8 @@ class SprayData:    # Stores offline spray calculation parameters
     whichspray = []
     # Original parameter list for spraylibs_v4
     sourcestrength = []    # This is the variable fs, user must provide every time.
-    r0 = []    # Droplet radius vector, default input of None provides hard-coded default vector.
-    delta_r0 = []    # Droplet r0 width vector, default input of None provides hard-coded default vector.
+    r0 = []    # Droplet radius vector, default input is hard-coded 25-value default vector from spray code.
+    delta_r0 = []    # Droplet r0 width vector, default input is hard-coded 25-value default vector from spray code.
     SSGFname = []    # Which SSGF to use, user must provide every time.
     feedback = []    # Include subgrid feedback?  Default input of True includes feedback -- recommended.
     profiles = []    # Calculate vertical thermo profiles?  These are optional diagnostics.  Default input of False turns this off.
@@ -200,8 +201,8 @@ class SprayData:    # Stores offline spray calculation parameters
     def __init__(self,\
             whichspray      = [],\
             sourcestrength  = [],\
-            r0              = [None ,None ,None ,None ,None ,None],\
-            delta_r0        = [None ,None ,None ,None ,None ,None],\
+            r0              = [csp.r0_default      ,csp.r0_default      ,csp.r0_default      ,csp.r0_default      ,csp.r0_default      ,csp.r0_default      ],\
+            delta_r0        = [csp.delta_r0_default,csp.delta_r0_default,csp.delta_r0_default,csp.delta_r0_default,csp.delta_r0_default,csp.delta_r0_default],\
             SSGFname        = [],\
             feedback        = [True ,True ,True ,True ,True ,True],\
             profiles        = [False,False,False,False,False,False],\
